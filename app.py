@@ -58,11 +58,10 @@ st.markdown("""
     margin-top: 2rem;
     color: #004d0d;
     }
-            
-    html, body, .main {
-    background-color: #ffffff !important;
-    }
 
+    html, body{
+        background-color:#ffffff
+    }
             
     .custom-header h1 {
         font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -304,6 +303,28 @@ if st.session_state['calculado']:
         </span>
     </div>
     """, unsafe_allow_html=True)
+
+        # Cálculo do "cada matrícula corresponde a XX matrícula total"
+    if qtm > 0:
+        MT_por_matricula = MT / qtm
+        st.markdown(f"""
+        <div style="
+            margin-top: 12px;
+            margin-bottom: 12px;
+            padding: 10px 15px;
+            border-left: 5px solid #17882c;
+            background-color: #f2faf4;
+            font-size: 1.1em;
+            color: #195128;
+            font-weight: 600;
+            border-radius: 6px;
+            text-align: left;
+            display: inline-block;
+        ">
+            📌 Cada matrícula corresponde a <b>{MT_por_matricula:.2f}</b> matrícula(s) total(is).
+        </div>
+        """, unsafe_allow_html=True)
+
 
 
     # Botão para mostrar detalhes
