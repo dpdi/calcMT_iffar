@@ -134,8 +134,8 @@ st.markdown("""
         mix-blend-mode: normal !important;
     }
 
-    /* Corrigir radio especificamente (texto "Sim"/"Não") */
-    div[data-baseweb="radio"] div[role="radio"] span {
+    /* Forçar texto do st.radio (span dentro do label) */
+    div[data-baseweb="radio"] label span {
         color: #2e2e2e !important;
         opacity: 1 !important;
         mix-blend-mode: normal !important;
