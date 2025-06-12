@@ -98,6 +98,11 @@ st.markdown("""
         border-radius: 6px !important;
         background-color: #f8f9fa !important;
     }
+    
+    /* Forçar cor das opções do Radio */
+    div[data-baseweb="radio"] span {
+        color: #2e2e2e !important;
+    }
             
     /* Remover "barrinha" e edição falsa do input interno do selectbox */
     div[data-baseweb="select"] input {
