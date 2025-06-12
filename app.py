@@ -85,7 +85,7 @@ st.markdown("""
             --text-color: #2e2e2e !important;
             --primary-color: #17882c !important;
             --secondary-color: #0f5e1f !important;
-            --text-color-inverse: #ffffff !important;
+            --text-color-inverse: #2e2e2e !important;
         }
     }
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
