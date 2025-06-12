@@ -104,6 +104,17 @@ st.markdown("""
         color: #2e2e2e !important;
     }
             
+    /* Forçar que o texto das opções do radio fique visível no dark */
+    .stRadio div[role="radiogroup"] label {
+        color: #2e2e2e !important;  /* cor do texto forçada */
+        opacity: 1 !important;      /* força o texto a ficar totalmente visível */
+    }
+
+    /* Também garantir que o wrapper não tenha opacity */
+    .stRadio div[role="radiogroup"] > div {
+        opacity: 1 !important;
+    }
+            
     /* Remover "barrinha" e edição falsa do input interno do selectbox */
     div[data-baseweb="select"] input {
         pointer-events: none !important;  /* não permite clicar/editar */
