@@ -49,67 +49,68 @@ df = carregar_dados()
 
 st.markdown("""
     <style>
-            
-    /* Força esquema claro */
-    html {
-        color-scheme: light !important;
-    }
-
-    /* Força fundo branco e texto preto */
+                
+        /* Forçar estilo de selects e inputs no modo dark */
     html, body, .main, .stApp {
+        color-scheme: light !important;
         background-color: #ffffff !important;
         color: #2e2e2e !important;
     }
 
-    /* Override das variáveis CSS do Streamlit dark mode */
-    :root {
-        --primary-background-color: #ffffff !important;
-        --background-color: #ffffff !important;
-        --secondary-background-color: #ffffff !important;
-        --text-color: #2e2e2e !important;
-        --primary-color: #17882c !important;
-        --secondary-color: #0f5e1f !important;
-        --text-color-inverse: #ffffff !important;
+    /* Borda e fundo suave dos inputs (como na imagem 2) */
+    input, select, textarea, button {
+        background-color: #ffffff !important;
+        color: #2e2e2e !important;
+        border: 1px solid #d9d9d9 !important; /* borda suave cinza claro */
+        border-radius: 6px !important; /* bordas arredondadas */
+        box-shadow: none !important;
+        caret-color: #2e2e2e !important;
     }
 
-    /* Em caso de prefers-color-scheme ainda tentar dark, garantir */
-    @media (prefers-color-scheme: dark) {
-        html, body, .main, .stApp {
-            background-color: #ffffff !important;
-            color: #2e2e2e !important;
-        }
-        :root {
-            --primary-background-color: #ffffff !important;
-            --background-color: #ffffff !important;
-            --secondary-background-color: #ffffff !important;
-            --text-color: #2e2e2e !important;
-            --primary-color: #17882c !important;
-            --secondary-color: #0f5e1f !important;
-            --text-color-inverse: #2e2e2e !important;
-        }
+    /* Forçar setinha de selectbox a aparecer */
+    select {
+        -webkit-appearance: menulist !important;
+        appearance: menulist !important;
+    }
+
+    /* Forçar botões + e - do number input com fundo claro */
+    .stNumberInput button {
+        background-color: #f7f7f7 !important;
+        color: #2e2e2e !important;
+        border: 1px solid #d9d9d9 !important;
+        border-radius: 4px !important;
+    }
+
+    /* Forçar labels de radio buttons visíveis */
+    .stRadio label {
+        color: #2e2e2e !important;
+    }
+
+    .stSelectbox div, .stSelectbox label,
+    div[data-baseweb="select"] input {
+        color: #2e2e2e !important;
+        caret-color: #2e2e2e !important;
+        background-color: #ffffff !important;
+    }
+
+    div[data-baseweb="select"] > div {
+        border: 1px solid #d9d9d9 !important;
+        border-radius: 6px !important;
+        background-color: #f8f9fa !important;
     }
             
-            html, body, .main, .block-container, .stMarkdown, .stText, .stHeader, .stSubheader, .stCaption, .stDataFrame, .stTable {
-            background-color: #ffffff !important;
-            color: #2e2e2e !important;
-        }
+    /* Remover "barrinha" e edição falsa do input interno do selectbox */
+    div[data-baseweb="select"] input {
+        pointer-events: none !important;  /* não permite clicar/editar */
+        caret-color: transparent !important;  /* remove a barrinha de digitação */
+        color: inherit !important;  /* mantém cor do texto normal */
+        background-color: transparent !important; /* fundo igual ao container */
+        border: none !important; /* sem borda extra */
+        box-shadow: none !important; /* sem sombra */
+        opacity: 1 !important;  /* garante que o texto visível do "selected option" não some */
+    }
 
-            
-            /* Força fundo branco em campos de input e selects do Streamlit */
-        div[data-baseweb="select"] > div,
-        div[data-baseweb="input"] > div,
-        div[data-baseweb="input"] input,
-        div[data-baseweb="select"] input,
-        div[data-baseweb="select"] div,
-        .stTextInput > div > div > input,
-        .stDateInput > div > div > input,
-        .stNumberInput > div > div > input,
-        .stRadio > div > div,
-        .stSelectbox > div > div,
-        .stButton > button {
-            background-color: #ffffff !important;
-            color: #2e2e2e !important;
-        }
+
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
     h1, h2, h3, h4, h5, h6, .block-container h1, .block-container h2, .block-container h3 {
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -298,12 +299,7 @@ st.markdown("""
         outline: none !important;
     }
             
-    /* Forçar labels visíveis no modo dark */
-    label, .stRadio > label, .stSelectbox > label, .stNumberInput > label, .stDateInput > label {
-    color: #2e2e2e !important;
-    opacity: 1 !important;
-    font-weight: 500; /* opcional, pra ficar um pouco mais legível */
-    }
+
     </style>
 """, unsafe_allow_html=True)
 
