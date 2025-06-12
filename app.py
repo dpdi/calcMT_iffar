@@ -126,6 +126,20 @@ st.markdown("""
         box-shadow: none !important; /* sem sombra */
         opacity: 1 !important;  /* garante que o texto visível do "selected option" não some */
     }
+            
+    /* Correção extra para labels sumindo no dark mode */
+    label, .stRadio label, .stNumberInput label {
+        color: #2e2e2e !important;
+        opacity: 1 !important;
+        mix-blend-mode: normal !important;
+    }
+
+    div[data-baseweb="radio"] label {
+        color: #2e2e2e !important;
+        opacity: 1 !important;
+        mix-blend-mode: normal !important;
+    }
+
 
 
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
