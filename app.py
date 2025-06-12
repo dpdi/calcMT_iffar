@@ -297,6 +297,13 @@ st.markdown("""
         box-shadow: none !important;
         outline: none !important;
     }
+            
+    /* Forçar labels visíveis no modo dark */
+    label, .stRadio > label, .stSelectbox > label, .stNumberInput > label, .stDateInput > label {
+    color: #2e2e2e !important;
+    opacity: 1 !important;
+    font-weight: 500; /* opcional, pra ficar um pouco mais legível */
+    }
     </style>
 """, unsafe_allow_html=True)
 
