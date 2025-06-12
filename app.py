@@ -88,6 +88,24 @@ st.markdown("""
             --text-color-inverse: #2e2e2e !important;
         }
     }
+            
+            /* Força fundo branco em campos de input e selects do Streamlit */
+        div[data-baseweb="select"] > div,
+        div[data-baseweb="input"] > div,
+        div[data-baseweb="input"] input,
+        div[data-baseweb="select"] input,
+        div[data-baseweb="select"] div,
+        .stTextInput > div > div > input,
+        .stDateInput > div > div > input,
+        .stNumberInput > div > div > input,
+        .stRadio > div > div,
+        .stSelectbox > div > div,
+        .stButton > button {
+            background-color: #ffffff !important;
+            color: #2e2e2e !important;
+            border: 1px solid #cccccc !important;
+            box-shadow: none !important;
+        }
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
     h1, h2, h3, h4, h5, h6, .block-container h1, .block-container h2, .block-container h3 {
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
