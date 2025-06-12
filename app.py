@@ -59,6 +59,11 @@ st.markdown("""
     color: #004d0d;
     }
             
+    html, body, .main {
+    background-color: #ffffff !important;
+    }
+
+            
     .custom-header h1 {
         font-family: "Open Sans", Arial, Helvetica, sans-serif;
         font-size: 2.55em;
