@@ -134,19 +134,20 @@ st.markdown("""
         mix-blend-mode: normal !important;
     }
 
-    /* Forçar texto do st.radio (span dentro do label) */
-    div[data-baseweb="radio"] label span {
+    /* Forçar texto do st.radio - typography-label */
+    div[data-baseweb="radio"] div[role="radio"] .typography-label {
         color: #2e2e2e !important;
         opacity: 1 !important;
         mix-blend-mode: normal !important;
     }
 
-    /* Corrigir o container de cada radio para garantir que o opacity não afete */
+    /* Garantir o container do radio */
     div[data-baseweb="radio"] div[role="radio"] {
         opacity: 1 !important;
         mix-blend-mode: normal !important;
         color: #2e2e2e !important;
     }
+
 
 
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
