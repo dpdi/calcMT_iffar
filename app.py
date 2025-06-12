@@ -50,18 +50,42 @@ df = carregar_dados()
 st.markdown("""
     <style>
             
+    /* Força esquema claro */
     html {
-    color-scheme: light !important;
+        color-scheme: light !important;
     }
 
+    /* Força fundo branco e texto preto */
     html, body, .main, .stApp {
         background-color: #ffffff !important;
+        color: #2e2e2e !important;
     }
 
-    /* Só para garantir ainda mais no caso de dark mode do celular */
+    /* Override das variáveis CSS do Streamlit dark mode */
+    :root {
+        --primary-background-color: #ffffff !important;
+        --background-color: #ffffff !important;
+        --secondary-background-color: #ffffff !important;
+        --text-color: #2e2e2e !important;
+        --primary-color: #17882c !important;
+        --secondary-color: #0f5e1f !important;
+        --text-color-inverse: #ffffff !important;
+    }
+
+    /* Em caso de prefers-color-scheme ainda tentar dark, garantir */
     @media (prefers-color-scheme: dark) {
         html, body, .main, .stApp {
             background-color: #ffffff !important;
+            color: #2e2e2e !important;
+        }
+        :root {
+            --primary-background-color: #ffffff !important;
+            --background-color: #ffffff !important;
+            --secondary-background-color: #ffffff !important;
+            --text-color: #2e2e2e !important;
+            --primary-color: #17882c !important;
+            --secondary-color: #0f5e1f !important;
+            --text-color-inverse: #ffffff !important;
         }
     }
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
