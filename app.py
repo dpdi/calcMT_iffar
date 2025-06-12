@@ -5,6 +5,8 @@ import datetime
 import unicodedata
 
 from correcoes_nomes import nomes_cursos_substituicoes
+from streamlit import config as _config
+_config.set_option("theme.base", "light")
 
 # Função para formatar nomes com acento e capitalização correta
 def formatar_nome(x):
