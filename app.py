@@ -89,6 +89,12 @@ st.markdown("""
         }
     }
             
+            html, body, .main, .block-container, .stMarkdown, .stText, .stHeader, .stSubheader, .stCaption, .stDataFrame, .stTable {
+            background-color: #ffffff !important;
+            color: #2e2e2e !important;
+        }
+
+            
             /* Força fundo branco em campos de input e selects do Streamlit */
         div[data-baseweb="select"] > div,
         div[data-baseweb="input"] > div,
@@ -103,8 +109,6 @@ st.markdown("""
         .stButton > button {
             background-color: #ffffff !important;
             color: #2e2e2e !important;
-            border: 1px solid #cccccc !important;
-            box-shadow: none !important;
         }
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
     h1, h2, h3, h4, h5, h6, .block-container h1, .block-container h2, .block-container h3 {
