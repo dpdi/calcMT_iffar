@@ -127,19 +127,26 @@ st.markdown("""
         opacity: 1 !important;  /* garante que o texto visível do "selected option" não some */
     }
             
-    /* Correção extra para labels sumindo no dark mode */
+    /* Corrigir labels gerais */
     label, .stRadio label, .stNumberInput label {
         color: #2e2e2e !important;
         opacity: 1 !important;
         mix-blend-mode: normal !important;
     }
 
-    div[data-baseweb="radio"] label {
+    /* Corrigir radio especificamente (texto "Sim"/"Não") */
+    div[data-baseweb="radio"] div[role="radio"] span {
         color: #2e2e2e !important;
         opacity: 1 !important;
         mix-blend-mode: normal !important;
     }
 
+    /* Corrigir o container de cada radio para garantir que o opacity não afete */
+    div[data-baseweb="radio"] div[role="radio"] {
+        opacity: 1 !important;
+        mix-blend-mode: normal !important;
+        color: #2e2e2e !important;
+    }
 
 
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
