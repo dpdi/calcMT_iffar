@@ -50,6 +50,20 @@ df = carregar_dados()
 st.markdown("""
     <style>
             
+    html {
+    color-scheme: light !important;
+    }
+
+    html, body, .main, .stApp {
+        background-color: #ffffff !important;
+    }
+
+    /* Só para garantir ainda mais no caso de dark mode do celular */
+    @media (prefers-color-scheme: dark) {
+        html, body, .main, .stApp {
+            background-color: #ffffff !important;
+        }
+    }
     /* Área central com fundo cinzinha e padding — a área que você delimitou */            
     h1, h2, h3, h4, h5, h6, .block-container h1, .block-container h2, .block-container h3 {
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -59,9 +73,6 @@ st.markdown("""
     color: #004d0d;
     }
 
-    html, body{
-        background-color:#ffffff
-    }
             
     .custom-header h1 {
         font-family: "Open Sans", Arial, Helvetica, sans-serif;
