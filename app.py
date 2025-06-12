@@ -104,11 +104,12 @@ st.markdown("""
         color: #2e2e2e !important;
     }
             
-    /* Forçar que o texto das opções do radio fique visível no dark */
-    .stRadio div[role="radiogroup"] label {
-        color: #2e2e2e !important;  /* cor do texto forçada */
-        opacity: 1 !important;      /* força o texto a ficar totalmente visível */
+   div[data-baseweb="radio"] div[role="radio"] *,
+    div[data-baseweb="radio"] div[role="radio"] {
+        color: #2e2e2e !important;
+        opacity: 1 !important;
     }
+
 
     /* Também garantir que o wrapper não tenha opacity */
     .stRadio div[role="radiogroup"] > div {
