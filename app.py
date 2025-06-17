@@ -45,123 +45,8 @@ def carregar_dados():
 
 df = carregar_dados()
 
-
-
-
-
 st.markdown("""
-    <style>
-                
-        /* Forçar estilo de selects e inputs no modo dark */
-    html, body, .main, .stApp {
-        color-scheme: light !important;
-        background-color: #ffffff !important;
-        color: #2e2e2e !important;
-    }
-
-    /* Borda e fundo suave dos inputs (como na imagem 2) */
-    input, select, textarea, button {
-        background-color: #ffffff !important;
-        color: #2e2e2e !important;
-        border: 1px solid #d9d9d9 !important; /* borda suave cinza claro */
-        border-radius: 6px !important; /* bordas arredondadas */
-        box-shadow: none !important;
-        caret-color: #2e2e2e !important;
-    }
-
-    /* Forçar setinha de selectbox a aparecer */
-    select {
-        -webkit-appearance: menulist !important;
-        appearance: menulist !important;
-    }
-
-    /* Forçar botões + e - do number input com fundo claro */
-    .stNumberInput button {
-        background-color: #f7f7f7 !important;
-        color: #2e2e2e !important;
-        border: 1px solid #d9d9d9 !important;
-        border-radius: 4px !important;
-    }
-
-    /* Forçar labels de radio buttons visíveis */
-    .stRadio label {
-        color: #2e2e2e !important;
-    }
-
-    .stSelectbox div, .stSelectbox label,
-    div[data-baseweb="select"] input {
-        color: #2e2e2e !important;
-        caret-color: #2e2e2e !important;
-        background-color: #ffffff !important;
-    }
-
-    div[data-baseweb="select"] > div {
-        border: 1px solid #d9d9d9 !important;
-        border-radius: 6px !important;
-        background-color: #f8f9fa !important;
-    }
-    
-    /* Forçar cor das opções do Radio */
-    div[data-baseweb="radio"] span {
-        color: #2e2e2e !important;
-    }
-            
-   div[data-baseweb="radio"] div[role="radio"] *,
-    div[data-baseweb="radio"] div[role="radio"] {
-        color: #2e2e2e !important;
-        opacity: 1 !important;
-    }
-
-
-    /* Também garantir que o wrapper não tenha opacity */
-    .stRadio div[role="radiogroup"] > div {
-        opacity: 1 !important;
-    }
-            
-    /* Remover "barrinha" e edição falsa do input interno do selectbox */
-    div[data-baseweb="select"] input {
-        pointer-events: none !important;  /* não permite clicar/editar */
-        caret-color: transparent !important;  /* remove a barrinha de digitação */
-        color: inherit !important;  /* mantém cor do texto normal */
-        background-color: transparent !important; /* fundo igual ao container */
-        border: none !important; /* sem borda extra */
-        box-shadow: none !important; /* sem sombra */
-        opacity: 1 !important;  /* garante que o texto visível do "selected option" não some */
-    }
-            
-    /* Corrigir labels gerais */
-    label, .stRadio label, .stNumberInput label {
-        color: #2e2e2e !important;
-        opacity: 1 !important;
-        mix-blend-mode: normal !important;
-    }
-
-    /* Forçar texto do st.radio - typography-label */
-    div[data-baseweb="radio"] div[role="radio"] .typography-label {
-        color: #2e2e2e !important;
-        opacity: 1 !important;
-        mix-blend-mode: normal !important;
-    }
-
-    /* Garantir o container do radio */
-    div[data-baseweb="radio"] div[role="radio"] {
-        opacity: 1 !important;
-        mix-blend-mode: normal !important;
-        color: #2e2e2e !important;
-    }
-
-
-
-    /* Área central com fundo cinzinha e padding — a área que você delimitou */            
-    h1, h2, h3, h4, h5, h6, .block-container h1, .block-container h2, .block-container h3 {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
-    font-weight: 600; /* ou o peso que você quiser */
-    font-size: 1.2em; /* ajustável */
-    margin-top: 2rem;
-    color: #004d0d;
-    }
-
-            
+    <style>         
     .custom-header h1 {
         font-family: "Open Sans", Arial, Helvetica, sans-serif;
         font-size: 2.55em;
@@ -197,6 +82,31 @@ st.markdown("""
 
     <div class="custom-bar"></div>
 """, unsafe_allow_html=True)
+
+if "exibir_alerta" not in st.session_state:
+    st.session_state["exibir_alerta"] = True
+
+if st.session_state["exibir_alerta"]:
+    col1, col2 = st.columns([0.9, 0.1])
+    with col1:
+        st.markdown("""
+        <div style="
+            border-left: 5px solid #ffc107;
+            background-color: #fff8e1;
+            padding: 15px;
+            margin-top: -10px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: #5d4500;
+        ">
+            ⚠️ <strong>Atenção:</strong> Esta ferramenta é um instrumento de apoio e deve ser usada com cautela ao comparar cursos. Sempre revise as informações utilizadas, especialmente no que se refere à <strong>carga horária</strong>, <strong>datas de início e fim de ciclo</strong> e o <strong>ano base</strong> considerado para análise.<br><br>
+    Os dados pré-preenchidos são provenientes dos microdados da Plataforma Nilo Peçanha - PNP 2024 (Ano Base 2023) e foram utilizados no cálculo da Matriz Orçamentária 2025. A Pesquisa Institucional identificou que há dados de carga horária cadastrados incorretamente no Sistec por alguns CRAs e por isso, afetaram diretamente o cálculo apresentado.
+</div>
+        """, unsafe_allow_html=True)
+    with col2:
+        if st.button("X", key="fechar_alerta"):
+            st.session_state["exibir_alerta"] = False
 
 
 
@@ -364,6 +274,7 @@ if st.session_state['calculado']:
 
     FEDA = (DACP1 + DACP2 + DACP3 + DACP4 + DACP5) / ((DFP - DIP).days + 1)
     FECHDA = FECH * FEDA
+
 
     if DACP5 == 0:
         MECHDA = FECHDA * qtm
