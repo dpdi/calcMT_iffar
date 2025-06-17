@@ -100,7 +100,7 @@ if st.session_state["exibir_alerta"]:
             font-size: 0.95rem;
             color: #5d4500;
         ">
-            ⚠️ <strong>Atenção:</strong> Esta ferramenta é um instrumento de apoio e deve ser usada com cautela ao comparar cursos. Sempre revise as informações utilizadas, especialmente no que se refere à <strong>carga horária</strong>, <strong>datas de início e fim de ciclo</strong> e o <strong>ano base</strong> considerado para análise.<br><br>
+            ⚠️ Esta ferramenta é um instrumento de apoio e deve ser usada com cautela ao comparar cursos. Sempre revise as informações utilizadas, especialmente no que se refere à <strong>carga horária</strong>, <strong>datas de início e fim de ciclo</strong> e o <strong>ano base</strong> considerado para análise.<br><br>
     Os dados pré-preenchidos são provenientes dos microdados da Plataforma Nilo Peçanha - PNP 2024 (Ano Base 2023) e foram utilizados no cálculo da Matriz Orçamentária 2025. A Pesquisa Institucional identificou que há dados de carga horária cadastrados incorretamente no Sistec por alguns CRAs e por isso, afetaram diretamente o cálculo apresentado.
 </div>
         """, unsafe_allow_html=True)
