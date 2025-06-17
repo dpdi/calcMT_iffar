@@ -1,7 +1,7 @@
 # Calculadora de Matrícula Total - IFFar
 
 Esta ferramenta foi desenvolvida para apoiar o cálculo da **Matrícula Total** de cursos ofertados no IFFarroupilha, conforme metodologia estabelecida na **Portaria MEC nº 646/2022**.
-
+https://iffarcalcmatriculatotal.streamlit.app/
 ---
 
 ## Objetivo
